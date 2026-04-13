@@ -6,7 +6,6 @@ async function github() {
     let data = await response.json();
     container.textContent = "";
     console.log(data);
-
     data.forEach((element) => {
       let subContainer = document.createElement("div");
       let username = document.createElement("h1");
