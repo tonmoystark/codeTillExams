@@ -1,11 +1,9 @@
 let containerList = document.getElementById("list");
 
 async function fetchDataURL(url) {
-  
-    let response = await fetch(url);
-    let data = await response.json();
-    return data;
-  
+  let response = await fetch(url);
+  let data = await response.json();
+  return data;
 }
 
 function card(user) {
@@ -31,23 +29,20 @@ function card(user) {
 }
 
 function showError(err) {
-    containerList.textContent = err
+  containerList.textContent = err;
 }
 
-
-async function main(){
-    containerList.textContent = 'loading Data'
-    try {
-        let data = await fetchDataURL('https://jsonplaceholder.typicode.com/users');
-        containerList.textContent = ''
-        data.forEach(element => {
-            let subContainer= card(element)
-            containerList.append(subContainer)
-        })
-    } catch (error) {
-        showError('Something went wrong')
-    }
-    
+async function main() {
+  containerList.textContent = "loading Data";
+  try {
+    let data = await fetchDataURL("https://jsonplaceholder.typicode.com/users");
+    containerList.textContent = "";
+    data.forEach((element) => {
+      let subContainer = card(element);
+      containerList.append(subContainer);
+    });
+  } catch (error) {
+    showError("Something went wrong");
+  }
 }
-
-main()
+main();
