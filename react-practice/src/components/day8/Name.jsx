@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const Name = () => {
-    const name = 'Tonmoy'
-  return (
-    <div>{name}</div>
-  )
-}
+  const name = "Tonmoy";
+  return <div>{name}</div>;
+};
 
-export default Name
+export default Name;
